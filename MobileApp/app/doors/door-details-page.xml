@@ -1,0 +1,38 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" navigatingFrom="onNavigatingFrom" loaded="onLoaded">
+    <Page.actionBar>
+        <ActionBar title="{{ title }}" icon="" class="action-bar">
+            <NavigationButton ios:visibility="collapsed" text="Go Back" android.systemIcon="ic_menu_back" tap="{{ onButtonBackTap }}" />
+            <ActionItem icon="res://navigation/menu" android:visibility="collapsed" tap="{{ onButtonBackTap }}" ios.position="left" />
+            <ActionItem ios.systemIcon="16" android.systemIcon="ic_menu_delete" ios.position="right"
+                visibility="{{ removable }}"
+                tap="{{ onButtonDeleteTap }}">
+            </ActionItem>
+        </ActionBar>
+    </Page.actionBar>
+    <DockLayout stretchLastChild="true" class="page-content page-door-details">
+        <ActivityIndicator dock="top" busy="{{ isLoading }}" />
+        <Button dock="Bottom" text="&#xF0C7; Save" isEnabled="{{ dirty }}" tap="{{ onButtonSaveTap }}" class="btn btn-primary btn-active fa" />
+        <StackLayout dock="Top">
+            <Label text="Host"></Label>
+            <GridLayout rows="auto" columns="*, 180">
+                <TextField col="0" row="0" id="txtHost" hint="http://192.168.4.1" text="{{ host }}" class="input" returnKeyType="next" />
+                <Button col="1" row="0" text="Connect..." tap="{{ onButtonConnectTap }}" class="btn btn-primary btn-active fa" />
+            </GridLayout>
+        </StackLayout>
+        <StackLayout dock="top" visibility="{{ showConfig }}">
+            <Label text="Name"></Label>
+            <TextField hint="Device friendly name" text="{{ name }}" class="input" returnKeyType="next" />
+            <Label text="SSID" />
+            <TextField hint="Access Point name" text="{{ ssid }}" class="input" returnKeyType="next" />
+            <Label text="Password"></Label>
+            <TextField text="{{ pass }}" class="input" returnKeyType="next" />
+            <Label text="Relay PIN"></Label>
+            <TextField text="{{ relayPin }}" class="input" keyboardType="number" returnKeyType="next" />
+            <Label text="Magnetic PIN"></Label>
+            <TextField text="{{ magneticPin }}" class="input" keyboardType="number" returnKeyType="next" />
+            <Label text="Button PIN"></Label>
+            <TextField text="{{ buttonPin }}" class="input" keyboardType="number" returnKeyType="done" />
+        </StackLayout>
+    </DockLayout>
+    
+</Page>

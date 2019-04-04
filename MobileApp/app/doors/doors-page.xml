@@ -1,0 +1,32 @@
+<Page
+    class="page"
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar title="Doors" icon="" class="action-bar">
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <ActionItem icon="res://navigation/menu" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <ActionItem tap="onAddButtonTap" text="Add" 
+            ios.systemIcon="4" ios.position="right"
+            android.systemIcon="ic_menu_add">
+        </ActionItem>
+    </ActionBar>
+
+    <ScrollView class="page-doors">
+        <StackLayout>
+            <ListView height="100" items="{{ doors }}" itemTap="onItemTap">
+                <ListView.itemTemplate>
+                    <StackLayout orientation="horizontal">
+                        <Label text="&#xf52a;" class="fa item-icon" />
+                        <Label text="{{ name }}" textWrap="true" class="item-text" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</Page>
+

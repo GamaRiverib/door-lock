@@ -1,0 +1,28 @@
+<Page
+    class="page"
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar title="Home" icon="" class="action-bar">
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <ActionItem icon="res://navigation/menu" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+    </ActionBar>
+
+    <DockLayout class="page-content" stretchLastChild="true">
+        <ActivityIndicator dock="top" busy="{{ isLoading }}" />
+        <StackLayout dock="top">
+            <Label horizontalAlignment="center" text="{{ doorName }}" class="door-name" textWrap="true" />
+            <Label horizontalAlignment="center" text="{{ isOnline || 'Connecting...' }}" class="door-online-text" />
+        </StackLayout>
+        <Button dock="bottom" text="{{ buttonIcon }}" tap="{{ onButtonTap }}" isEnabled="{{ buttonEnabled }}" class="btn btn-primary btn-active fa push-button"/>
+        <StackLayout dock="bottom">
+            <Label horizontalAlignment="center" text="{{ statusIcon }}" class="fa door-status-icon" />
+            <Label horizontalAlignment="center" text="{{ statusText || 'Connecting...' }}" class="door-status-text" textWrap="true" />
+        </StackLayout>
+    </DockLayout>
+</Page>
+

@@ -1,0 +1,32 @@
+{
+  "name": "door-lock-wifi-button-app",
+  "version": "0.1.0",
+  "description": "Door Lock WiFi Button App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --mode development --open",
+    "build": "webpack -p",
+    "start": "webpack -p && node server.js"
+  },
+  "keywords": [
+    "Door Lock",
+    "Button"
+  ],
+  "author": "José Gamaliel Rivera Ibarra <gama.rivera@gmail.com> (https://github.com/GamaRiverib)",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "2.1.0",
+    "express": "4.16.4",
+    "express-favicon": "^2.0.1",
+    "script-loader": "0.7.2",
+    "style-loader": "0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "4.29.3",
+    "webpack-cli": "3.2.3",
+    "webpack-dev-server": "3.1.14"
+  },
+  "dependencies": {
+    "vanilla-router": "^1.2.7"
+  }
+}
