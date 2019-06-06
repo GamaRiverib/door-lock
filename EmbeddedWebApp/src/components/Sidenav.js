@@ -4,7 +4,7 @@ import { LinksComponent } from './Links';
 export function SidenavComponent() {
 
     function template() {
-        return `
+        return /*html*/`
             <div class="sidenav">
                 <a class="closebtn" m-c="close">&times;</a>
                 <a class="link" m-f="{ 'items': 'links' }" href="item.path">{{ item.text }}</a>
